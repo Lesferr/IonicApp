@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cover</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let chapter of chapters">
+    <ion-item [routerDirection]="'root'" [routerLink]="['/TOC']">
+    {{chapter.title}};
+
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="item.src"></ion-img>
+      </ion-thumbnail>
+      <ion-label>{{item.text}}</ion-label>
+    </ion-item>
+</ion-content>
